@@ -11,9 +11,10 @@ class ProjectService
 {
     public function index(array $params): array
     {
+//        dd($params);
         $query = ProjectModel::select('*')
-            ->when(isset($params['name']), function ($query) use ($params) {
-                $name = trim($params['name']);
+            ->when(isset($params['query']), function ($query) use ($params) {
+                $name = trim($params['query']);
                 $query->where('name', 'like', '%' . $name . '%');
             })
             ->when(isset($params['bedrooms']), function ($query) use ($params) {

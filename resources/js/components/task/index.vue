@@ -6,7 +6,7 @@
         </div>
 
         <div class="filter-row">
-            <el-input v-model="params.name" size="small" placeholder="Search by Name" class="filter-item" @input="index()" />
+            <el-input v-model="params.query" size="small" placeholder="Search by Name" class="filter-item" @input="index()" />
             <div class="filter-item">
                 <span class="filter-label">Price:</span>
                 <el-slider v-model="params.price" range show-stops :max="1000000" :step="10000" @change="index()" />
@@ -67,7 +67,7 @@ export default {
             params: {
                 page_limit: 20,
                 page: 1,
-                name: '',
+                query: '',
                 price: [0, 1000000],
                 bedrooms: null,
                 bathrooms: null,
@@ -82,7 +82,7 @@ export default {
             this.params = {
                 page_limit: 20,
                 page: 1,
-                name: '',
+                query: '',
                 price: [0, 1000000],
                 bedrooms: null,
                 bathrooms: null,

@@ -15,9 +15,9 @@ class IndexRequest extends FormRequest
     {
         return [
             'query' => ['nullable', 'string', 'max:55'],
-            'price'      => ['nullable', 'array', 'size:2'],
-            'price.0'    => ['nullable', 'integer', 'min:0', 'max:1000000'],
-            'price.1'    => ['nullable', 'integer', 'min:0', 'max:1000000', 'gte:price.0'],
+            'price' => ['nullable', 'array', 'size:2'],
+            'price.0' => ['nullable', 'integer', 'min:0', 'max:1000000'],
+            'price.1' => ['nullable', 'integer', 'min:0', 'max:1000000', 'gte:price.0'],
             'bedrooms' => ['nullable', 'integer', 'max:100'],
             'bathrooms' => ['nullable', 'integer', 'max:100'],
             'storeys' => ['nullable', 'integer', 'max:100'],
